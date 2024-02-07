@@ -45,7 +45,9 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
-    </dependencies>
+
+
+	</dependencies>
 
 	<build>
 		<plugins>

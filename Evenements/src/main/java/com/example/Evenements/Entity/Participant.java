@@ -1,35 +1,17 @@
 package com.example.Evenements.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Data
+@Getter
+@Setter
 @Entity
-public class Participant {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_participant")
+public class Participant extends User {
 
-    private Long id;
-
-    @Column(name="nom")
-    private String nom;
-
-    @Column(name="prenom")
-    private String prenom;
-
-    @Column(name="tel")
-    private String tel;
-
-    @Column(name="email")
-    private String email;
-
-    @Column(name="adresse")
-    private String adresse;
       @ManyToOne
+      @JsonIgnore
      private Evenements evenements;
 
 }

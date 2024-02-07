@@ -1,13 +1,12 @@
 package com.example.Evenements.Entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Invitations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +22,7 @@ public class Invitations {
     @Column(name = "message_invit")
     private String message;
 
-@ManyToOne
+    @ManyToOne
     private Evenements evenements1;
 
 

@@ -2,6 +2,8 @@ package com.example.Evenements.Entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import java.util.Date;
@@ -9,7 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Inscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +28,7 @@ public class Inscription {
     private String prenom;
     @Column(name = "cin_inscription")
     private String cin;
-@ManyToMany
+    @ManyToMany
     private List<Evenements>evenementsList;
 
 }

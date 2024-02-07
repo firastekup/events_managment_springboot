@@ -40,7 +40,6 @@ public class ParticipantServiceimpl implements participantservice {
 
     @Override
     public Participant createParticipant(Participant participant) {
-
         return participantrepository.save(participant);
     }
 }

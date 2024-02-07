@@ -3,6 +3,7 @@ package com.example.Evenements.services;
 import com.example.Evenements.Entity.Invitations;
 import com.example.Evenements.Entity.Organisateur;
 import com.example.Evenements.Repository.InvitationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class InvitationserviceImpl implements invitationservice {
+    @Autowired
 private InvitationRepository invitationrepo;
     @Override
     public List<Invitations> getAllInviatation() {

@@ -23,7 +23,7 @@ public class ParticipantController {
     public Participant saveParticipant(@RequestBody Participant participant, @PathVariable Long idevennemet)
     {
         Evenements e1=evenementService.getEvenement(idevennemet);
-        participant.setEvenements(e1);
+       // participant.setEvenements(e1);
         return participantServiceimpl.createParticipant(participant);
     }
 

@@ -3,13 +3,16 @@ package com.example.Evenements.Entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.engine.internal.Cascade;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 @Entity
-@Data
+@Getter
+@Setter
 public class Evenements {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,13 +48,14 @@ public class Evenements {
     private List<Organisateur> organisa;
 
      @ManyToMany
-    List<Inscription>inscriptionList;
-     @OneToMany(mappedBy = "evenements")
+   List<Inscription>inscriptionList;
 
+
+     @OneToMany(mappedBy = "evenements")
      private List<Participant>participantList;
      @JsonIgnore
-    @OneToMany(mappedBy = "evenements1")
-private List<Invitations>invitationsList;
+     @OneToMany(mappedBy = "evenements1",cascade = CascadeType.REMOVE)
+     private List<Invitations>invitationsList;
 
 
 

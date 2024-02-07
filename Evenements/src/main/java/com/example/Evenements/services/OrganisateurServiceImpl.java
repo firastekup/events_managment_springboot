@@ -3,14 +3,16 @@ package com.example.Evenements.services;
 import com.example.Evenements.Entity.Evenements;
 import com.example.Evenements.Entity.Organisateur;
 import com.example.Evenements.Repository.OrganisateurRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class OrganisateurServiceImpl implements organisateurservice {
-    private OrganisateurRepository organisateurrepo;
+    private final  OrganisateurRepository organisateurrepo;
 
     @Override
     public List<Organisateur> getAllOrganisateur() {

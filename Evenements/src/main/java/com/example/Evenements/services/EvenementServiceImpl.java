@@ -20,8 +20,7 @@ public class EvenementServiceImpl implements evenementservice {
 
     @Override
     public Evenements getEvenement(Long id) {
-        Optional<Evenements> optionalevenemnts=evenementrepo.findById(id);
-        return null;
+         return evenementrepo.findById(id).orElseThrow();
     }
 
     @Override
